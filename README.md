@@ -72,6 +72,4 @@ Returns true if the given string is empty or contains only whitespace. White spa
 > Output: `true`
 
 ### Challenge 11 - readme
-Add a readme.md to your GitHub Repo. In this file you will document your library of string functions.
-
-Also include a link to your library on npm. You'll be publishing this npm in class 2.
+Add a readme.md to your GitHub Repo. In this file you will document your library of string functions. Also include a link to your library on npm.

@@ -1,6 +1,6 @@
 {
   "name": "@maybejaybe/string-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Javascript Library of String functions created to make life just a little easier.",
   "main": "index.js",
   "scripts": {
