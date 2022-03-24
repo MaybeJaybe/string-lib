@@ -108,11 +108,11 @@ console.log(camelCase(test7));
 
 // Challenge 8 - shift to end
 // move first character of string to end of string
-function shiftChar(str) {
+function shift(str) {
   const firstChar = str.slice(0, 1);
   return str.slice(1) + firstChar;
 }
-console.log(shiftChar(test8));
+console.log(shift(test8));
 
 // Challenge 9 - convert to hashtag
 // start string with hashtag, remove spaces, uppercase first letter of each word
