@@ -127,7 +127,7 @@ console.log(makeHashtag(test9));
 function isEmpty(str) {
   const blankSpace = str.trim().split('');
   for (let i = 0; i < blankSpace.length; i += 1) {
-    if (blankSpace[i] !== ' ' || blankSpace[i] !== '\n' || blankSpace[i] !== '\r' || blankSpace[i] !== '\t') {
+    if (blankSpace[i] !== (' ' || '\n' || '\r' || '\t')) {
       return false;
     }
   }
