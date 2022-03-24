@@ -127,7 +127,7 @@ console.log(makeHashtag(test9));
 function isEmpty(str) {
   const blankSpace = str.trim().split('');
   for (let i = 0; i < blankSpace.length; i += 1) {
-    if (blankSpace[i] !== ' ') {
+    if (blankSpace[i] !== ' ' || blankSpace[i] !== '\n' || blankSpace[i] !== '\r' || blankSpace[i] !== '\t') {
       return false;
     }
   }
@@ -135,5 +135,8 @@ function isEmpty(str) {
 }
 console.log("empty test");
 console.log(isEmpty(test10));
+console.log(isEmpty('\n'));
+console.log(isEmpty('\r'));
+console.log(isEmpty('\t'));
 console.log("hello world test");
 console.log(isEmpty(test1));

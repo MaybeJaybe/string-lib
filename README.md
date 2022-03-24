@@ -1,7 +1,9 @@
 # String Lib
 
 Javascript Library of String functions 
-assignment elaborated (here)[https://github.com/Tech-at-DU/ACS-3310-Writing-JavaScript-Libraries/blob/master/assignments/assignment-01.md]
+assignment elaborated [here](https://github.com/Tech-at-DU/ACS-3310-Writing-JavaScript-Libraries/blob/master/assignments/assignment-01.md)
+
+---
 
 ## Challenge 1 - capitalize()
 makes the first character of a given string uppercase.
