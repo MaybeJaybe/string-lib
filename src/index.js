@@ -1,13 +1,15 @@
+/* eslint-disable no-console */
+/* eslint-disable no-shadow */
 /* eslint-disable no-else-return */
+
 const str = 'hello world';
-const test1 = 'hello world';
 const test4 = '   remove     spaces   ';
 const test5 = '   kebab-Case_!! num test 1, 8, and 88.    ';
-const test6 = '   Snake_Case-! hi!  1, 8, or 88?    ';
+const test6 = '   Snake_Case-! hi!  8?    ';
 const test7 = '   Camel case    test   ';
 const test8 = 'shift first';
-const test9 = 'what a great test';
-const test10 = ' ';
+const test9 = '   lovely day     for cricket    ';
+const test10 = '     ';
 
 // Challenge 1 - capitalize
 // make first character of a given string uppercase
@@ -16,14 +18,14 @@ function capitalize(str) {
   const rest = str.slice(1);
   return first + rest;
 }
-console.log(capitalize(test1));
+console.log(capitalize(str));
 
 // Challenge 2 - all caps
 // make all characters upper case
 function allCaps(str) {
   return str.toUpperCase();
 }
-console.log(allCaps(test1));
+console.log(allCaps(str));
 
 // Challenge 3 - first letter capitalized all words
 // make the first character of each word uppercase
@@ -32,7 +34,7 @@ function capitalizeWords(str) {
   const uppercase = words.map((word) => capitalize(word));
   return uppercase.join(' ');
 }
-console.log(capitalizeWords(test1));
+console.log(capitalizeWords(str));
 
 // Challenge 4 - remove spaces
 // remove all spaces from beginning and end, as well as extra spaces between
@@ -117,8 +119,10 @@ console.log(shift(test8));
 // Challenge 9 - convert to hashtag
 // start string with hashtag, remove spaces, uppercase first letter of each word
 function makeHashtag(str) {
-  const hashtagWord = camelCase(str);
-  return ('#' + hashtagWord);
+  const remove = removeExtraSpaces(str);
+  const caps = capitalizeWords(remove);
+  const hashtag = caps.split(' ').join('');
+  return `#${hashtag}`;
 }
 console.log(makeHashtag(test9));
 
@@ -133,10 +137,10 @@ function isEmpty(str) {
   }
   return true;
 }
-console.log("empty test");
+console.log('empty test');
 console.log(isEmpty(test10));
 console.log(isEmpty('\n'));
 console.log(isEmpty('\r'));
 console.log(isEmpty('\t'));
-console.log("hello world test");
-console.log(isEmpty(test1));
+console.log('hello world test');
+console.log(isEmpty(str));
