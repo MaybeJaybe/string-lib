@@ -1,12 +1,20 @@
 {
-  "name": "string-lib",
+  "name": "@maybejaybe/string-lib",
   "version": "1.0.0",
-  "description": "",
+  "description": "Javascript Library of String functions created to make life just a little easier.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Jay",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaybeJaybe/string-lib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MaybeJaybe/string-lib/issues"
+  },
+  "homepage": "https://github.com/MaybeJaybe/string-lib#readme"
 }
