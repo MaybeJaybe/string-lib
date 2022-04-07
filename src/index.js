@@ -1,3 +1,5 @@
+/* eslint-disable func-names */
+/* eslint-disable no-extend-native */
 /* eslint-disable no-console */
 /* eslint-disable no-shadow */
 /* eslint-disable no-else-return */
@@ -18,14 +20,24 @@ function capitalize(str) {
   const rest = str.slice(1);
   return first + rest;
 }
-console.log(capitalize(str));
+String.prototype.capitalize = function () {
+  return capitalize(this);
+};
+
+console.log(str.capitalize());
+// console.log('tell hi'.capitalize());
+// console.log(test8.capitalize());
 
 // Challenge 2 - all caps
 // make all characters upper case
 function allCaps(str) {
   return str.toUpperCase();
 }
-console.log(allCaps(str));
+String.prototype.allCaps = function () {
+  return allCaps(this);
+};
+
+console.log(str.allCaps());
 
 // Challenge 3 - first letter capitalized all words
 // make the first character of each word uppercase
@@ -34,7 +46,11 @@ function capitalizeWords(str) {
   const uppercase = words.map((word) => capitalize(word));
   return uppercase.join(' ');
 }
-console.log(capitalizeWords(str));
+String.prototype.capitalizeWords = function () {
+  return capitalizeWords(this);
+};
+
+console.log(str.capitalizeWords());
 
 // Challenge 4 - remove spaces
 // remove all spaces from beginning and end, as well as extra spaces between
@@ -44,7 +60,11 @@ function removeExtraSpaces(str) {
   const filtered = chars.filter((char) => char !== '');
   return filtered.join(' ');
 }
-console.log(removeExtraSpaces(test4));
+String.prototype.removeExtraSpaces = function () {
+  return removeExtraSpaces(this);
+};
+
+console.log(test4.removeExtraSpaces());
 
 // Challenge 5 - kebab case
 // replace spaces with hyphen, remove extra spaces, make characters lowercase
@@ -66,7 +86,11 @@ function kebabCase(str) {
   const freeSpace = removeExtraSpaces(filtered.join(''));
   return freeSpace.split(' ').join('-');
 }
-console.log(kebabCase(test5));
+String.prototype.kebabCase = function () {
+  return kebabCase(this);
+};
+
+console.log(test5.kebabCase());
 
 // Challenge 6 - snake case
 // remove extra spaces, replace spaces with underscore, make all characters lowercase
@@ -88,25 +112,36 @@ function snakeCase(str) {
   const freeSpace = removeExtraSpaces(filtered.join(''));
   return freeSpace.split(' ').join('_');
 }
-console.log(snakeCase(test6));
+String.prototype.snakeCase = function () {
+  return snakeCase(this);
+};
+
+console.log(test6.snakeCase());
 
 // Challenge 7 - camel case
 // lowercase first character of first word, uppercase first letter of following words, remove spaces
 function camelCase(str) {
-  // remove extra spaces first?
+  // remove extra spaces first
   const removeSpace = removeExtraSpaces(str);
   // uppercase first char of the rest of the words
   const words = removeSpace.split(' ');
-  const uppercase = words.map((word) => capitalize(word));
-  const joined = uppercase.join(' ');
-  // lowercase first char of first word
-  const first = joined[0].toLowerCase();
-  const rest = joined.slice(1);
-  const complete = first + rest;
-  return complete.split(' ').join('');
-}
+  // eslint-disable-next-line no-confusing-arrow
+  const uppercase = words.map((word, i) => i > 0 ? capitalize(word) : word.toLowerCase());
+  // expression ? when true do this : when false do this
+  return uppercase.join('');
 
-console.log(camelCase(test7));
+  // const uppercase = words.map((word) => capitalize(word));
+  // const joined = uppercase.join(' ');
+  // // lowercase first char of first word
+  // const first = joined[0].toLowerCase();
+  // const rest = joined.slice(1);
+  // const complete = first + rest;
+  // return complete.split(' ').join('');
+}
+String.prototype.camelCase = function () {
+  return camelCase(this);
+};
+console.log(test7.camelCase());
 
 // Challenge 8 - shift to end
 // move first character of string to end of string
@@ -114,7 +149,11 @@ function shift(str) {
   const firstChar = str.slice(0, 1);
   return str.slice(1) + firstChar;
 }
-console.log(shift(test8));
+String.prototype.shift = function () {
+  return shift(this);
+};
+
+console.log(test8.shift());
 
 // Challenge 9 - convert to hashtag
 // start string with hashtag, remove spaces, uppercase first letter of each word
@@ -124,7 +163,11 @@ function makeHashtag(str) {
   const hashtag = caps.split(' ').join('');
   return `#${hashtag}`;
 }
-console.log(makeHashtag(test9));
+String.prototype.makeHashtag = function () {
+  return makeHashtag(this);
+};
+
+console.log(test9.makeHashtag());
 
 // Challenge 10 - is empty
 // return true if given string is empty or contains only whitespace.
@@ -137,10 +180,12 @@ function isEmpty(str) {
   }
   return true;
 }
-console.log('empty test');
-console.log(isEmpty(test10));
-console.log(isEmpty('\n'));
-console.log(isEmpty('\r'));
-console.log(isEmpty('\t'));
-console.log('hello world test');
-console.log(isEmpty(str));
+String.prototype.isEmpty = function () {
+  return isEmpty(this);
+};
+
+console.log(test10.isEmpty());
+console.log(str.isEmpty());
+console.log('\n'.isEmpty());
+console.log('\r'.isEmpty());
+console.log('\t'.isEmpty());
