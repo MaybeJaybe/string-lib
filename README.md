@@ -1,5 +1,8 @@
 # String Lib
 
+![npm bundle size](https://img.shields.io/bundlephobia/min/@maybejaybe/string-lib)
+![npm](https://img.shields.io/npm/v/@maybejaybe/string-lib)
+
 Javascript Library of String functions created to make life just a little easier.
 
 Assignment elaborated [here](https://github.com/Tech-at-DU/ACS-3310-Writing-JavaScript-Libraries/blob/master/assignments/assignment-01.md)
