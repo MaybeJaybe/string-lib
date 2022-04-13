@@ -4,15 +4,8 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-else-return */
 
-// const str = 'hello world';
-// const test4 = '   remove     spaces   ';
-// const test5 = '   kebab-Case_!! num test 1, 8, and 88.    ';
-// const test6 = '   Snake_Case-! hi!  8?    ';
-// const test7 = '   Camel case    test   ';
-// const test8 = 'shift first';
-// const test9 = '   lovely day     for cricket    ';
-// const test10 = '     ';
-
+// currently won't accept isEmpty as a function unless its above ones that use it
+// temporary solution.
 function isEmpty(str) {
   const blankSpace = str.trim().split('');
   for (let i = 0; i < blankSpace.length; i += 1) {
@@ -40,10 +33,6 @@ String.prototype.capitalize = function () {
   return capitalize(this);
 };
 
-// console.log(str.capitalize());
-// console.log('tell hi'.capitalize());
-// console.log(test8.capitalize());
-
 // Challenge 2 - all caps
 // make all characters upper case
 function allCaps(str) {
@@ -52,8 +41,6 @@ function allCaps(str) {
 String.prototype.allCaps = function () {
   return allCaps(this);
 };
-
-// console.log(str.allCaps());
 
 // Challenge 3 - first letter capitalized all words
 // make the first character of each word uppercase
@@ -66,8 +53,6 @@ String.prototype.capitalizeWords = function () {
   return capitalizeWords(this);
 };
 
-// console.log(str.capitalizeWords());
-
 // Challenge 4 - remove spaces
 // remove all spaces from beginning and end, as well as extra spaces between
 function removeExtraSpaces(str) {
@@ -79,8 +64,6 @@ function removeExtraSpaces(str) {
 String.prototype.removeExtraSpaces = function () {
   return removeExtraSpaces(this);
 };
-
-// console.log(test4.removeExtraSpaces());
 
 // Challenge 5 - kebab case
 // replace spaces with hyphen, remove extra spaces, make characters lowercase
@@ -106,8 +89,6 @@ String.prototype.kebabCase = function () {
   return kebabCase(this);
 };
 
-// console.log(test5.kebabCase());
-
 // Challenge 6 - snake case
 // remove extra spaces, replace spaces with underscore, make all characters lowercase
 function snakeCase(str) {
@@ -132,8 +113,6 @@ String.prototype.snakeCase = function () {
   return snakeCase(this);
 };
 
-// console.log(test6.snakeCase());
-
 // Challenge 7 - camel case
 // lowercase first character of first word, uppercase first letter of following words, remove spaces
 function camelCase(str) {
@@ -141,16 +120,11 @@ function camelCase(str) {
   const words = removeSpace.split(' ');
   // eslint-disable-next-line no-confusing-arrow
   const uppercase = words.map((word, i) => i > 0 ? capitalize(word) : word.toLowerCase());
-  // expression meanings:
-  // ? when true do this
-  // : when false do this
   return uppercase.join('');
 }
 String.prototype.camelCase = function () {
   return camelCase(this);
 };
-console.log('this is a very long string.'.camelCase());
-console.log('this     test    8'.camelCase());
 
 // Challenge 8 - shift to end
 // move first character of string to end of string
@@ -162,8 +136,6 @@ String.prototype.shift = function () {
   return shift(this);
 };
 
-console.log('hello feso.'.shift());
-
 // Challenge 9 - convert to hashtag
 // start string with hashtag, remove spaces, uppercase first letter of each word
 function makeHashtag(str) {
@@ -174,21 +146,12 @@ function makeHashtag(str) {
   const caps = capitalizeWords(remove);
   const hashtag = caps.split(' ').join('');
   return `#${hashtag}`;
-  // if (str.isEmpty()) === false) {
-  //   const remove = removeExtraSpaces(str);
-  //   const caps = capitalizeWords(remove);
-  //   const hashtag = caps.split(' ').join('');
-  //   return `#${hashtag}`;
-  // }
-  // return '';
 }
 String.prototype.makeHashtag = function () {
   return makeHashtag(this);
 };
 
-console.log('hey how it do.'.makeHashtag());
-console.log('oh hello world'.makeHashtag());
-
+// currently moved to top, explanation also up top
 // Challenge 10 - is empty
 // return true if given string is empty or contains only whitespace.
 // function isEmpty(str) {
@@ -203,12 +166,6 @@ console.log('oh hello world'.makeHashtag());
 // String.prototype.isEmpty = function () {
 //   return isEmpty(this);
 // };
-
-// console.log(test10.isEmpty());
-// console.log(str.isEmpty());
-// console.log('\n'.isEmpty());
-// console.log('\r'.isEmpty());
-// console.log('\t'.isEmpty());
 
 module.exports.isEmpty = isEmpty;
 module.exports.capitalize = capitalize;
