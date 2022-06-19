@@ -1,5 +1,8 @@
 # String Lib
 
+[![Coverage Status](https://coveralls.io/repos/github/MaybeJaybe/string-lib/badge.svg?branch=master)](https://coveralls.io/github/MaybeJaybe/string-lib?branch=master)
+[![Build Status](https://app.travis-ci.com/MaybeJaybe/string-lib.svg?branch=master)](https://app.travis-ci.com/MaybeJaybe/string-lib)
+
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@maybejaybe/string-lib)
 ![npm](https://img.shields.io/npm/v/@maybejaybe/string-lib)
 
